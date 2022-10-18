@@ -1,11 +1,17 @@
 package programming;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FP01Functional {
     public static void main(String[] args) throws Exception {
         printAllNumbersInListFunctional(List.of(1, 2, 3));
         printEvenNumbersInListFunctionalUsingFilter(List.of(1,2,3,4,5,120,1232));
+        printCubeOfNumbersInListFunctionalUsingFilter(List.of(1, 2, 3, 4, 5, 1232, 1232, 1232, 1232, 1232));
+    }
+
+    private static void printCubeOfNumbersInListFunctionalUsingFilter(List<Integer> list) {
+        list.stream().map(num->num*num*num).forEach(System.out::println);
     }
 
     private static void printEvenNumbersInListFunctionalUsingFilter(List<Integer> list) throws Exception {
